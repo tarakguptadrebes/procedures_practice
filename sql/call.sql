@@ -1,0 +1,1 @@
+CALL customers_procedure();
