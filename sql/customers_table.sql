@@ -1,9 +1,9 @@
 CREATE TABLE customers(
     customer_id INT PRIMARY KEY,
-    customer_name VARCHAR(100),
-    city VARCHAR(100),
-    annual_income VARCHAR(100),
-    employment_status VARCHAR(100)
+    customer_name VARCHAR,
+    city VARCHAR,
+    annual_income VARCHAR,
+    employment_status VARCHAR
 );
 
 

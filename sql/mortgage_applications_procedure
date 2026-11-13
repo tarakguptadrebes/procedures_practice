@@ -1,0 +1,30 @@
+CREATE OR REPLACE PROCEDURE mortgage_applications_procedure()
+    LANGUAGE plpgsql
+    AS $$
+
+    BEGIN
+
+        TRUNCATE TABLE mortgage_applications;
+
+        INSERT INTO mortgage_applications(
+            application_id,
+            customer_id,
+            application_date,
+            requested_amount,
+            property_value,
+            ltv,
+            decision
+        )
+
+        SELECT
+            application_id,
+            customer_id,
+            application_date::date,
+            requested_amount,
+            property_value,
+            ltv,
+            decision
+        FROM mortgage_applications_stg;
+
+END;
+$$;
